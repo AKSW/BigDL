@@ -173,7 +173,7 @@
         <collections.version>3.2.1</collections.version>
         <scoverage.plugin.version>1.1.1</scoverage.plugin.version>
         <spark-version.project>2.0</spark-version.project>
-        <spark.version>2.4.3</spark.version>
+        <spark.version>2.4.7</spark.version>
         <breeze.version>0.13.2</breeze.version>
         <spark-scope>provided</spark-scope>
 
@@ -316,7 +316,7 @@
                     <artifactId>maven-bundle-plugin</artifactId>
                     <version>${maven-bundle-plugin.version}</version>
                 </plugin>
-                <plugin>
+                <!--<plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>1.6.6</version>
@@ -325,7 +325,7 @@
                         <serverId>nexus</serverId>
                         <nexusUrl>http://10.239.45.219:8081/</nexusUrl>
                     </configuration>
-                </plugin>
+                </plugin>-->
             </plugins>
         </pluginManagement>
 
@@ -404,7 +404,7 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>3.4.2</version>
+                <version>4.4.0</version>
                 <executions>
                     <execution>
                         <id>eclipse-add-source</id>
@@ -438,7 +438,9 @@
                                 this arg. Maybe it is a bug of the plugin. -->
                                 <arg>-skip-packages</arg>
                                 <arg>caffe:org.tensorflow:netty:org.apache.spark.sparkExtension:org.apache.spark.rdd:org.apache.spark.storage:org.apache.spark.bigdl</arg>
-                            </args>
+                             <arg>-Xmax-classfile-name</arg>
+         <arg>140</arg>
+				</args>
                         </configuration>
                     </execution>
                 </executions>
@@ -465,7 +467,7 @@
                     </compilerPlugins>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
             <version>1.6.7</version>
@@ -475,7 +477,7 @@
                 <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                 <autoReleaseAfterClose>false</autoReleaseAfterClose>
             </configuration>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -504,7 +506,7 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>3.4.2</version>
+                <version>4.4.0</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -555,7 +557,7 @@
                     <plugin>
                         <groupId>net.alchim31.maven</groupId>
                         <artifactId>scala-maven-plugin</artifactId>
-                        <version>3.4.2</version>
+                        <version>4.4.0</version>
                         <executions>
                             <execution>
                                 <id>eclipse-add-source</id>
@@ -589,7 +591,9 @@
                                         this arg. Maybe it is a bug of the plugin. -->
                                         <arg>-skip-packages</arg>
                                         <arg>caffe:org.tensorflow:netty:org.apache.spark.sparkExtension:org.apache.spark.rdd:org.apache.spark.storage:org.apache.spark.bigdl</arg>
-                                    </args>
+ <arg>-Xmax-classfile-name</arg>
+         <arg>140</arg>                                    
+</args>
                                 </configuration>
                             </execution>
                         </executions>
@@ -622,10 +626,10 @@
             <id>spark_3.x</id>
             <properties>
                 <spark-version.project>3.0</spark-version.project>
-                <spark.version>3.0.0</spark.version>
+                <spark.version>3.0.1</spark.version>
                 <scala.major.version>2.12</scala.major.version>
-                <scala.version>2.12.8</scala.version>
-                <scala.macros.version>2.1.0</scala.macros.version>
+                <scala.version>2.12.11</scala.version>
+                <scala.macros.version>2.1.1</scala.macros.version>
             </properties>
             <build>
                 <plugins>
@@ -633,7 +637,7 @@
                     <plugin>
                         <groupId>net.alchim31.maven</groupId>
                         <artifactId>scala-maven-plugin</artifactId>
-                        <version>3.4.2</version>
+                        <version>4.4.0</version>
                         <executions>
                             <execution>
                                 <id>eclipse-add-source</id>
